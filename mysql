@@ -1,0 +1,24 @@
+create database daysoundwave;
+use daysoundwave;
+
+create table artista(
+	id int auto_increment primary key,
+    artista varchar(100)
+);
+
+create table genero(
+	id int auto_increment primary key,
+    genero varchar(100)
+);
+
+insert into artista(artista)
+values
+('veigh'),
+('travis scott'),
+('playboy carti');
+
+insert into genero(genero)
+values
+('trap nacional'),
+('trap internacional'),
+('hip hop');
