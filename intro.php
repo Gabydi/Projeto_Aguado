@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaySoundwave</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="jogo.html">Jogo</a></li>
+                    <!-- Colocando barra de pesquisa -->
+                    <li> 
+                        <form action="pesquisa.php" method="GET">
+                            <input type="text" name="pesquisa" placeholder="Pesquise Aqui...">
+                            <button type="submit">Pesquisar</button>
+                        </form>
+                        <?php
+                        include 'conexao_bd.php'; 
+
+                        if(!isset($_GET['pesquisa'])) {
+                            ?>
+                            <tr>
+                                <td colspan="2">Digite algo para pesquisar...</td>  
+                            </tr>
+                            <?php
+                        } else {
+
+                            $pesquisa = $mysqli->real_escape_string($_GET['pesquisa']); 
+                            
+                            $sql_code = "SELECT * FROM daysoundwave WHERE artista LIKE '%$pesquisa%' OR genero LIKE '%$pesquisa%'"; 
+                            
+                            $sql_query = $mysqli->query($sql_code) or die("ERRO ao consultar! " . $mysqli->error); 
+                            
+                            if ($sql_query->num_rows == 0) {
+                                ?>
+                                <tr>
+                                    <td colspan="2">Nenhum resultado encontrado...</td>
+                                </tr>
+                                <?php
+                            } else {
+                                while($dados = $sql_query->fetch_assoc()) {  
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $dados['artista']; ?></td>
+                                        <td><?php echo $dados['genero']; ?></td>
+                                    </tr>
+                                    <?php
+                                }
+                            }
+                        }
+                        ?>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Banner Principal -->
+        <div class="banner">
+            <div class="banner-content">
+                <div class="blur-overlay">
+                    <h1 id="DaySoundwave">DaySoundwave</h1>
+                    <p id="vibe">Para cada momento uma nova vibe, para cada vibe, uma nova música!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção dos Estilos -->
+        <section class="destaques">
+            <h1 id="estilos">Mergulhe por vários estilos</h1>
+            <br>
+            <div class="estilos">
+                <div class="estilo">
+                    <img src="img/Trap Nacional.png" alt="Trap nacional">
+                    <h3>Trap Nacional</h3>
+                    <p>Conheça o melhor do Trap nacional</p>
+                    <sub>NIINK - SOMOS PROFISSIONAIS</sub>
+                    <audio src="midia/NIINK - SOMOS PROFISSIONAIS (Clipe Oficial).mp4" controls="true"></audio>
+                    <a href="trapn.html">Saiba mais!</a>
+                </div>
+                <div class="estilo">
+                    <img src="img/Trap Internacional.png" alt="Trap">
+                    <h3>Trap Internacional</h3>
+                    <p>Conheça o melhor do Trap internacional</p> 
+                    <sub>Travis Scott - FE!N ft. Playboi Carti</sub>
+                    <audio src="midia/Travis Scott - FE!N (Official Audio) ft. Playboi Carti.mp4" controls="true"></audio>
+                    <a href="trap.html">Saiba mais!</a>
+                </div>
+                <div class="estilo">
+                    <img src="img/Hip-Hop.png" alt="Hip-Hop">
+                    <h3>Hip-Hop</h3>
+                    <p>Conheça o melhor do Hip-Hop</p>
+                    <sub>2Pac ft. Richie Rich - Ratha Be Ya Nigga</sub>
+                    <audio src="midia/Ratha Be Ya Nigga.mp4" controls="true"></audio>
+                    <a href="hip.html">Saiba mais!</a>
+                </div>
+                <div class="estilo">
+                    <img src="img/Drill.png" alt="Drill">
+                    <h3>Drill</h3>
+                    <p>Conheça o melhor do Drill</p>
+                    <sub>Central Cee ft. Lil Baby - BAND4BAND</sub>
+                    <audio src="midia/CENTRAL CEE FT. LIL BABY - BAND4BAND (MUSIC VIDEO).mp4" controls="true"></audio>
+                    <a href="drill.html">Saiba mais!</a>
+                </div>
+                <div class="estilo">
+                    <img src="img/Mumble Rap.png" alt="Mumble">
+                    <h3>Mumble Rap</h3>
+                    <p>Conheça o melhor do Mumble Rap</p>
+                    <sub>Future, Metro Boomin, Travis Scott, Playboi Carti - Type Shit</sub>
+                    <audio src="midia/Future, Metro Boomin, Travis Scott, Playboi Carti - Type Shit (Official Audio).mp4" controls="true"></audio>
+                    <a href="mumble.html">Saiba mais!</a>
+                </div>
+            </div>
+        </section>
+        <br>
+
+        <!-- Seção dos Artistas -->
+        <section class="destaqueBranco">
+            <h1 id="estilos">Conheça os melhores da Cena</h1>
+            <br>
+            <div class="estilos">
+                <div class="estilo">
+                    <img src="img/Travis.png" alt="Travis Scott">
+                    <h3>Travis Scott</h3>
+                    <a href="https://open.spotify.com/intl-pt/artist/0Y5tJX1MQlPlqiwlOH1tJY?si=35e2425af3b2436f">Ouça mais!</a>
+                </div>
+
+                <div class="estilo">
+                    <img src="img/Vino.png" alt="Vino">
+                    <h3>Yunk Vino</h3>
+                    <a href="https://open.spotify.com/intl-pt/artist/460m2YG30duLCuHwFdiLgX?si=188b0344d0c4472b">Ouça mais!</a>
+                </div>
+
+                <div class="estilo">
+                    <img src="img/Carti.png" alt="Carti">
+                    <h3>Playboy Carti</h3>
+                    <a href="https://open.spotify.com/intl-pt/artist/699OTQXzgjhIYAHMy9RyPD?si=0f2420dff2db485b">Ouça mais!</a>
+                </div>
+
+                <div class="estilo">
+                    <img src="img/Tupac.png" alt="Tupac">
+                    <h3>2Pac</h3>
+                    <a href="https://open.spotify.com/intl-pt/artist/1ZwdS5xdxEREPySFridCfh?si=7ccc2686919743f6">Ouça mais!</a>
+                </div>
+
+                <div class="estilo">
+                    <img src="img/Cjota.png" alt="Cjota">
+                    <h3>Cjota</h3>
+                    <a href="https://open.spotify.com/intl-pt/artist/5qvphJwi72TG198xn5VVYH?si=ec59ef17e23b4819">Ouça mais!</a>
+                </div>
+
+                <div class="estilo">
+                    <img src="img/Veigh.png" alt="Veigh">
+                    <h3>Veigh</h3>
+                    <a href="https://open.spotify.com/intl-pt/artist/4YqwRbMLqGHRHLS1w2ZKse?si=403a3dfa0da04492">Ouça mais!</a>
+                </div>
+
+                <div class="estilo">
+                    <img src="img/Savage.png" alt="Savage">
+                    <h3>21Savage</h3>
+                    <a href="https://open.spotify.com/intl-pt/artist/1URnnhqYAYcrqrcwql10ft?si=4a51bdfec6b34ba3">Ouça mais!</a>
+                </div>
+
+                <div class="estilo">
+                    <img src="img/Don Toliver.png" alt="Don Toliver">
+                    <h3>Don Toliver</h3>
+                    <a href="https://open.spotify.com/intl-pt/artist/4Gso3d4CscCijv0lmajZWs?si=77f81f586e574b7c">Ouça mais!</a>
+                </div>
+
+                <div class="estilo">
+                    <img src="img/Ryu.png" alt="Ryu">
+                    <h3>Ryu, The Runner</h3>
+                    <a href="https://open.spotify.com/intl-pt/artist/1ZzJx2AgPmbnOE6OXhnn5K?si=1503727b8ea3448d">Ouça mais!</a>
+                </div>
+
+                <div class="estilo">
+                    <img src="img/Eminem.png" alt="Eminem">
+                    <h3>Eminem</h3>
+                    <a href="https://open.spotify.com/intl-pt/artist/7dGJo4pcD2V6oG8kP0tJRR?si=099fdd45a9fe4e7c">Ouça mais!</a>
+                </div>
+
+                <div class="estilo">
+                    <img src="img/50cent.png" alt="50Cent">
+                    <h3>50 Cent</h3>
+                    <a href="https://open.spotify.com/intl-pt/artist/3q7HBObVc0L8jNeTe5Gofh?si=6a1d63b13638433d">Ouça mais!</a>
+                </div>
+
+                <div class="estilo">
+                    <img src="img/Boaventura.png" alt="Boaventura">
+                    <h3>Boaventura</h3>
+                    <a href="https://open.spotify.com/intl-pt/artist/0HNv7LfoPFCBtfdeiFIXPe?si=a0f5143e1af0474c">Ouça mais!</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer>
+            <ul>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </footer>
+    </main>
+</body>
+</html>
