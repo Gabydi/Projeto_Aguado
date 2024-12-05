@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #bd0000;
+    background: #000000;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+#logoImg {
+    width: 100%;
+    height: 100%;
+    cursor: pointer; 
+}
+
+header {
+    background: #000000;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.banner {
+    background: url('/img/batidas') no-repeat center center;
+    background-size: cover;
+    color: #ffffff;
+    padding: 50px 0;
+    text-align: center;
+    height: 415px;
+    
+}
+
+.banner-content {
+    position: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    margin-top: 2em;
+}
+
+#DaySoundwave {
+    font-size: 5em;
+    color: #c50303;
+    position: center;
+    font-weight: bold;
+    font-style: oblique;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+
+.DaySoundwave ul{
+    list-style: none;
+    justify-content: center
+}
+
+#vibe {
+    color: #ffffff;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.blur-overlay {
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(54, 54, 54, 0.781);
+    backdrop-filter: blur(5px);
+    z-index: 0;
+    pointer-events: none;
+    display: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.destaques {
+    padding: 20px;
+    text-align: center;
+}
+
+.estilos {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.destaques .estilo {
+    background: #4e4e4e71;
+    backdrop-filter: blur(50px);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    flex: 1 1 200px;
+    max-width: 300px;
+    z-index: 0;
+}
+
+.estilo a, sub{
+    color: whitesmoke;
+}
+
+sub{
+    font-size: small;
+}
+
+.destaques .estilo img {
+    width: 100%;
+    border-radius: 1em;
+    display: block; /* Corrigido para centralizar a imagem dentro do bloco */
+    margin: 0 auto;
+}
+
+.estilo audio{
+    width: 84%; /* Definindo o tamanho da caixa de audio */
+    display: block; /* Corrigido para centralizar o audio dentro do bloco */
+    margin: 0 auto;
+    background-color: #ff0404; /* Cor da caixa ao redor do player */   
+    border-radius: 500em; 
+}
+
+.estilo:hover{
+    transition: 0.5s ease-in-out;
+    transform: scale(1.2);
+}
+
+.destaqueBranco {
+    background: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+.destaqueBranco .estilo{
+    justify-content: space-around;
+    margin-top: 50px;
+    font-size: 21px;
+}
+
+.destaqueBranco .estilo img{
+    width: 101px;
+    height: 101px;
+    border-radius: 1em;
+}
+
+.destaqueBranco a{
+    color: darkred;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer ul {
+    list-style: none;
+    justify-content: center;
+    gap: 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* Diminui o número de colunas */
+        gap: 10px;
+    }
+
+    .banner {
+        height: auto; /* Adapta banner*/
+        padding: 20px 0;
+    }
+
+    #DaySoundwave {
+        font-size: 2.5em; /* Diminui o tamanho do texto */
+    }
+
+    .destaques .estilo {
+        max-width: 100%; /* As coisas ocupam mais espaço na tela menor */
+        flex: 1 1 100%;
+    }
+
+    .destaqueBranco .estilo {
+        grid-template-columns: 1fr; /* Para tela pequena e mantém layout */
+    }
+
+    footer ul {
+        flex-direction: column; /* Rodapé em couna */
+    }
+}
+
+

@@ -1,0 +1,90 @@
+body{
+    margin: 0; 
+    background-color: rgb(17, 17, 17);
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+  }
+
+header{
+    text-align: center;   
+    text-align: center; 
+    background-color: rgb(131, 0, 0); 
+    color: rgb(255, 248, 248);
+    padding: 2px;
+    font-size: 1em;
+}
+
+h3{
+    color: white;
+}
+
+article{
+    text-align:justify;
+    padding: 15px;
+    border: 1px solid rgba(255, 0, 0, 0.8);
+    border-radius: 10px;
+    background-color: rgb(131, 0, 0);
+    color: aliceblue;
+}
+
+h1, h3{
+    text-align: center;
+}
+
+aside{
+    text-align: left;
+    padding: 50px; 
+    background-color: rgb(131, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: auto;
+    color: aliceblue;
+    border: 1px solid rgba(255, 0, 0, 0.8);
+    border-radius: 10px;
+}
+
+
+.total {
+    grid-column: 1 / 13;
+}
+
+.esquerdo {
+  grid-column: 2 / 8;
+}
+
+.direito {
+  grid-column: 9 / 12;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Layout vira uma coluna */
+        gap: 5px;
+    }
+
+    .total {
+        grid-column: 1 / -1; /* Ocupa toda a largura da tela */
+    }
+
+    .esquerdo, .direito {
+        grid-column: 1 / -1; /* Adapta article e aside */
+        padding: 10px; 
+    }
+
+    article h1 {
+        font-size: 2em; /* Diminui tamanho */
+    }
+
+    aside {
+        padding: 20px; /* Diminui padding */
+    }
+
+    header {
+        font-size: 1.5em; /* Aumenta header para enxergar */
+    }
+}
+

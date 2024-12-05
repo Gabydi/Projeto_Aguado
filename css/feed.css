@@ -1,0 +1,73 @@
+
+body {
+  height: 100%;
+  display: grid;
+  background-color: rgba(97, 5, 5, 0.945);
+  font-family: Arial, sans-serif;
+}
+
+h1{
+  color: aliceblue;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.formulario {
+  display: grid;
+  gap: 20px;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #311c1c;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: rgb(133, 5, 5); /* Cor original do botão */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(61, 5, 5); /* Cor quando o cursor passa pelo botão */
+}
+
+@media (max-width: 768px) {
+  .formulario {
+      width: 90%; /* Aumenta a largura do formulário */
+      padding: 20px; 
+  }
+
+  label {
+      font-size: 1em; /* Ajusta o tamanho da fonte */
+  }
+
+  input, textarea {
+      padding: 8px; /* Diminui o padding interno */
+  }
+
+  button {
+      padding: 12px; /* Ajusta o padding do botão para se adaptar ao tamanho da tela */
+  }
+}
+
