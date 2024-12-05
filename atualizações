@@ -1,0 +1,16 @@
+Mudanças no HTML e CSS
+Alguns erros foram encontrados na formulação do layout da página, o display foi modificado
+e alguns grid’s foram excluídos, tudo visando manter o layout já visto na Fase 1 do site.
+Após mais algumas mudanças, foi trocado o layout da “Seção dos Artistas” pois o anterior
+não estava conversando tanto e nem gerando harmonia.
+
+Implementos com JavaScript
+O JavaScript foi utilizado para inserir uma imagem de introdução e ao clicar nela, será
+redirecionado até a página principal em si. Outro recurso de JavaScript que foi utilizado foi
+para fazer implementações necessárias para um jogo da memória(novo elemento
+adicionado). A barra de pesquisa continua em progresso.
+
+Implementação PHP e BD
+A implementação não ocorreu como o esperado, parte do codigo foi feita, uma parte não foi bem 
+sucedida, com a implementação o JavaScript foi corrompido e ainda não identifiquei o que occoreu,
+nessa fase o projeto não teve grande evolução.
